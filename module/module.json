@@ -1,0 +1,4 @@
+{
+    "name": "countdown",
+    "load": ["countdown.lua"]
+}
