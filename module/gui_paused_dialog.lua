@@ -21,7 +21,7 @@ function gui_paused_dialog_create(player)
         direction = "vertical",
         style = "inside_shallow_frame_with_padding",
     }
-    local text = "The game has been paused, until the event begins.",
+    local text = "The game has been paused, until the event begins."
     for line in string.gmatch(text .. "\\n", "(.-)\\n") do
         local label = inner_frame.add {
             type = "label",

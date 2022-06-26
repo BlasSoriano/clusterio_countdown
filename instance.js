@@ -9,6 +9,7 @@ class InstancePlugin extends libPlugin.BaseInstancePlugin {
 
     // Pause or unpause all instances
     async pauseServersEventHandler(message) {
+        // TODO: Check if the instance is running?
         await this.sendRcon(`/sc countdown.pause_unpause('${message.pause}')`, true);
     }
 };

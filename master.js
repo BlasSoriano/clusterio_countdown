@@ -14,10 +14,16 @@ class MasterPlugin extends libPlugin.BaseMasterPlugin {
         this.pauseServers(true);
     }
 
+    // On server start
+    async onStart() {
+        // Pause all servers
+        this.pauseServers(true);
+    }
+
     // On shutdown master server
     async onShutdown() {
 		// Free the timer
-        clearTimer();
+        this.clearTimer();
 	}
 
     // Broadcast message to pause or unpause all instances
@@ -27,13 +33,13 @@ class MasterPlugin extends libPlugin.BaseMasterPlugin {
 
     // If there is any running countdown, stop and clear
     clearTimer() {
-        if (this.timer) { clearInterval(this.timer) ;}
+        if (this.timer) { clearInterval(this.timer); }
     }
 
     // Set timer, after button Set/Reset has been pressed
     resetTimer(time) {
         // Free the timer
-        clearTimer();
+        this.clearTimer();
         // Set countdown time to the specified value
         this.countdown = time;
         // Set the time left to the total countdown time
