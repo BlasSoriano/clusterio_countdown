@@ -6,10 +6,13 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* unused harmony export WebPlugin */
-/* harmony import */ var _clusterio_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(419);
-/* harmony import */ var _clusterio_lib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_clusterio_lib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _clusterio_web_ui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(405);
-/* harmony import */ var _clusterio_web_ui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_clusterio_web_ui__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(423);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _clusterio_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(419);
+/* harmony import */ var _clusterio_lib__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_clusterio_lib__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _clusterio_web_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(405);
+/* harmony import */ var _clusterio_web_ui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_clusterio_web_ui__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -21,12 +24,11 @@ function CountdownPage() {
   }, /*#__PURE__*/React.createElement("h2", null, "Countdown"), /*#__PURE__*/React.createElement("p", null, "Test"));
 }
 
-class WebPlugin extends _clusterio_lib__WEBPACK_IMPORTED_MODULE_0__.libPlugin.BaseWebPlugin {
+class WebPlugin extends _clusterio_lib__WEBPACK_IMPORTED_MODULE_1__.libPlugin.BaseWebPlugin {
   async init() {
-    this.countdown = new Map();
     this.pages = [{
-      path: "/countdown",
       sidebarName: "Countdown",
+      path: "/countdown",
       permission: "countdown.countdown.view",
       content: /*#__PURE__*/React.createElement(CountdownPage, null)
     }];
@@ -277,10 +279,11 @@ class WebPlugin extends _clusterio_lib__WEBPACK_IMPORTED_MODULE_0__.libPlugin.Ba
 /******/ 		});
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
+/******/ 			423: () => (loadVersionCheck("default", "react", [1,16,13,1])),
 /******/ 			419: () => (loadVersionCheck("default", "@clusterio/lib", [1,2,0,0,,"alpha",12])),
 /******/ 			405: () => (loadVersionCheck("default", "@clusterio/web_ui", [1,2,0,0,,"alpha",5]))
 /******/ 		};
-/******/ 		var initialConsumes = [419,405];
+/******/ 		var initialConsumes = [423,419,405];
 /******/ 		initialConsumes.forEach((id) => {
 /******/ 			__webpack_require__.m[id] = (module) => {
 /******/ 				// Handle case when module is used sync

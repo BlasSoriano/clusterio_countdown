@@ -1,3 +1,4 @@
+import React, { useContext, useEffect, useState } from "react";
 import { libPlugin } from "@clusterio/lib";
 import { PageLayout } from "@clusterio/web_ui";
 
@@ -12,12 +13,10 @@ function CountdownPage() {
 
 export class WebPlugin extends libPlugin.BaseWebPlugin {
     async init() {
-        this.countdown = new Map();
-
         this.pages = [
 			{
-				path: "/countdown",
 				sidebarName: "Countdown",
+				path: "/countdown",
 				permission: "countdown.countdown.view",
 				content: <CountdownPage/>,
 			},

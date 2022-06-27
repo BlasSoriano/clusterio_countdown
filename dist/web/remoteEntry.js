@@ -399,12 +399,14 @@ __webpack_require__.d(exports, {
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
 /******/ 			419: () => (loadVersionCheck("default", "@clusterio/lib", [1,2,0,0,,"alpha",12])),
-/******/ 			405: () => (loadVersionCheck("default", "@clusterio/web_ui", [1,2,0,0,,"alpha",5]))
+/******/ 			405: () => (loadVersionCheck("default", "@clusterio/web_ui", [1,2,0,0,,"alpha",5])),
+/******/ 			423: () => (loadVersionCheck("default", "react", [1,16,13,1]))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
 /******/ 			"278": [
-/******/ 				405
+/******/ 				405,
+/******/ 				423
 /******/ 			],
 /******/ 			"419": [
 /******/ 				419
