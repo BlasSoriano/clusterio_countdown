@@ -1,2 +1,53 @@
-"use strict";(self.webpackChunkcountdown=self.webpackChunkcountdown||[]).push([[232],{232:(e,n,t)=>{const{libConfig:o,libLink:s,libUsers:i}=t(419);class a extends o.PluginConfigGroup{}a.defaultAccess=["master","slave","control"],a.groupName="countdown",a.define({name:"countdown_time",title:"Countdown time",description:"Time in seconds to wait for auto unpause servers.",type:"number",initial_value:600}),a.finalize(),i.definePermission({name:"countdown.countdown.view",title:"View Countdown stuff",description:"View the stuff related to Countdown.",grantByDefault:!0}),e.exports={name:"countdown",title:"Countdown",description:"Pause Factorio servers until a countdown times out.",masterEntrypoint:"master",MasterConfigGroup:a,instanceEntrypoint:"instance",messages:{pauseServers:new s.Event({type:"countdown:pauseServers",links:["master-slave","slave-instance"],broadcastTo:"instance",eventProperties:{pause:{type:"boolean"}}})}}}}]);
+"use strict";
+(self["webpackChunkcountdown"] = self["webpackChunkcountdown"] || []).push([[232],{
+
+/***/ 232:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+
+const { libConfig, libLink, libUsers } = __webpack_require__(419);
+
+class MasterConfigGroup extends libConfig.PluginConfigGroup {}
+MasterConfigGroup.defaultAccess = ["master", "slave", "control"];
+MasterConfigGroup.groupName = "countdown";
+MasterConfigGroup.define({
+	name: "countdown_time",
+	title: "Countdown time",
+	description: "Time in seconds to wait for auto unpause servers.",
+	type: "number",
+	initial_value: 600,
+});
+MasterConfigGroup.finalize();
+
+libUsers.definePermission({
+	name: "countdown.countdown.view",
+	title: "View Countdown stuff",
+	description: "View the stuff related to Countdown.",
+	grantByDefault: true,
+});
+
+module.exports = {
+    name: "countdown",
+    title: "Countdown",
+    description: "Pause Factorio servers until a countdown times out.",
+    masterEntrypoint: "master",
+    MasterConfigGroup,
+    instanceEntrypoint: "instance",
+    webEntrypoint: "./web",
+    messages: {
+        pauseServers: new libLink.Event({
+			type: "countdown:pauseServers",
+			links: ["master-slave", "slave-instance"],
+			broadcastTo: "instance",
+			eventProperties: {
+                "pause": { type: "boolean" },
+            },
+		}),
+    },
+};
+
+
+/***/ })
+
+}]);
 //# sourceMappingURL=232.bundle.js.map

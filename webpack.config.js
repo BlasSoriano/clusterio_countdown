@@ -9,6 +9,7 @@ module.exports = (env = {}) => merge(common(env), {
 	context: __dirname,
 	entry: "./web/index.jsx",
 	output: {
+		publicPath: "auto",
 		filename: "bundle.js",
 		path: path.resolve(__dirname, "dist", "web"),
 	},
@@ -20,11 +21,18 @@ module.exports = (env = {}) => merge(common(env), {
 			exposes: {
 				"./info": "./info.js",
 				"./package.json": "./package.json",
+				"./web": "./web/index.jsx",
 			},
 			shared: {
 				"@clusterio/lib": { import: false },
 				"@clusterio/web_ui": { import: false },
+				"antd": { import: false },
+				"react": { import: false },
+				"react-dom": { import: false },
 			},
 		}),
 	],
+	optimization: {
+        minimize: false
+    },
 });

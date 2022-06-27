@@ -27,6 +27,7 @@ module.exports = {
     masterEntrypoint: "master",
     MasterConfigGroup,
     instanceEntrypoint: "instance",
+    webEntrypoint: "./web",
     messages: {
         pauseServers: new libLink.Event({
 			type: "countdown:pauseServers",
