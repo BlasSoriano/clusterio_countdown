@@ -12,6 +12,9 @@
 /* harmony import */ var _clusterio_lib__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_clusterio_lib__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _clusterio_web_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(405);
 /* harmony import */ var _clusterio_web_ui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_clusterio_web_ui__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(513);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -21,7 +24,16 @@ function CountdownPage() {
     nav: [{
       name: "Countdown"
     }]
-  }, /*#__PURE__*/React.createElement("h2", null, "Countdown"), /*#__PURE__*/React.createElement("p", null, "Test"));
+  }, /*#__PURE__*/React.createElement("h2", null, "Countdown"), /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement("label", {
+    for: "event-time"
+  }, "Choose date and time for the start of the event: "), /*#__PURE__*/React.createElement("input", {
+    type: "datetime-local",
+    id: "event-time",
+    name: "event-time",
+    value: "2022-06-19T05:30",
+    min: "2018-06-07T00:00",
+    max: "2024-06-28T00:00"
+  }))));
 }
 
 class WebPlugin extends _clusterio_lib__WEBPACK_IMPORTED_MODULE_1__.libPlugin.BaseWebPlugin {
@@ -281,9 +293,10 @@ class WebPlugin extends _clusterio_lib__WEBPACK_IMPORTED_MODULE_1__.libPlugin.Ba
 /******/ 		var moduleToHandlerMapping = {
 /******/ 			423: () => (loadVersionCheck("default", "react", [1,16,13,1])),
 /******/ 			419: () => (loadVersionCheck("default", "@clusterio/lib", [1,2,0,0,,"alpha",12])),
-/******/ 			405: () => (loadVersionCheck("default", "@clusterio/web_ui", [1,2,0,0,,"alpha",5]))
+/******/ 			405: () => (loadVersionCheck("default", "@clusterio/web_ui", [1,2,0,0,,"alpha",5])),
+/******/ 			513: () => (loadVersionCheck("default", "antd", [1,4,16,0]))
 /******/ 		};
-/******/ 		var initialConsumes = [423,419,405];
+/******/ 		var initialConsumes = [423,419,405,513];
 /******/ 		initialConsumes.forEach((id) => {
 /******/ 			__webpack_require__.m[id] = (module) => {
 /******/ 				// Handle case when module is used sync

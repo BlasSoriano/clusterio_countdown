@@ -14,6 +14,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _clusterio_lib__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_clusterio_lib__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _clusterio_web_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(405);
 /* harmony import */ var _clusterio_web_ui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_clusterio_web_ui__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(513);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -23,7 +26,16 @@ function CountdownPage() {
     nav: [{
       name: "Countdown"
     }]
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Countdown"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Test"));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Countdown"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(antd__WEBPACK_IMPORTED_MODULE_3__.Form, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    for: "event-time"
+  }, "Choose date and time for the start of the event: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "datetime-local",
+    id: "event-time",
+    name: "event-time",
+    value: "2022-06-19T05:30",
+    min: "2018-06-07T00:00",
+    max: "2024-06-28T00:00"
+  }))));
 }
 
 class WebPlugin extends _clusterio_lib__WEBPACK_IMPORTED_MODULE_1__.libPlugin.BaseWebPlugin {
